@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run _myApp_ Debug x64",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\x64\\Debug\\_myApp_.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}\\_myApp_",
+            "environment": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "build Debug x64"
+        }
+    ]
+}

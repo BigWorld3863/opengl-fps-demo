@@ -1,0 +1,47 @@
+# Visual Studio user/cache files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output directories
+x64/
+Win32/
+Debug/
+Release/
+_myApp_/x64/
+_myApp_/Win32/
+_myApp_/Debug/
+_myApp_/Release/
+
+# Compiled objects and linker/debug outputs
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.exe
+*.dll
+*.lib.recipe
+*.exp
+*.iobj
+*.ipdb
+
+# Keep Wavefront OBJ model assets.
+!_myApp_/assets/models/
+!_myApp_/assets/models/*.obj
+
+# MSBuild generated files
+*.log
+*.tlog
+*.lastbuildstate
+*.recipe
+*.FileListAbsolute.txt
+
+# Generated dependency/build trees bundled from external projects
+extern/
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store

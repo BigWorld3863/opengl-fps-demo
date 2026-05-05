@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build Debug x64",
+            "type": "process",
+            "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe",
+            "args": [
+                "${workspaceFolder}\\CGP_VS2022.sln",
+                "/p:Configuration=Debug",
+                "/p:Platform=x64",
+                "/m"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean Debug x64",
+            "type": "process",
+            "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe",
+            "args": [
+                "${workspaceFolder}\\CGP_VS2022.sln",
+                "/t:Clean",
+                "/p:Configuration=Debug",
+                "/p:Platform=x64"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run Debug x64",
+            "type": "process",
+            "command": "${workspaceFolder}\\x64\\Debug\\_myApp_.exe",
+            "dependsOn": "build Debug x64",
+            "options": {
+                "cwd": "${workspaceFolder}\\_myApp_"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
