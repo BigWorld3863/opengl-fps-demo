@@ -8,7 +8,6 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #define MINIAUDIO_IMPLEMENTATION
-#include "include/stb_image.h"
 #include "include/miniaudio.h"
 #include "include/Model.h"
 #include "include/GunModel.h"

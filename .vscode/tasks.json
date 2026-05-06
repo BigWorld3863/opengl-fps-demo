@@ -4,12 +4,15 @@
         {
             "label": "build Debug x64",
             "type": "process",
-            "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe",
+            "command": "powershell",
             "args": [
-                "${workspaceFolder}\\CGP_VS2022.sln",
-                "/p:Configuration=Debug",
-                "/p:Platform=x64",
-                "/m"
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\tools\\msbuild-x64.ps1",
+                "-Configuration",
+                "Debug"
             ],
             "group": {
                 "kind": "build",
@@ -20,12 +23,17 @@
         {
             "label": "clean Debug x64",
             "type": "process",
-            "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe",
+            "command": "powershell",
             "args": [
-                "${workspaceFolder}\\CGP_VS2022.sln",
-                "/t:Clean",
-                "/p:Configuration=Debug",
-                "/p:Platform=x64"
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\tools\\msbuild-x64.ps1",
+                "-Configuration",
+                "Debug",
+                "-Target",
+                "Clean"
             ],
             "problemMatcher": "$msCompile"
         },

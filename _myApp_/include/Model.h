@@ -9,6 +9,8 @@
 #include <sb7.h>
 #include <vmath.h>
 
+#include "stb_image.h"
+
 class Model{
 public:
 	std::vector<vmath::vec3> vPositions;
