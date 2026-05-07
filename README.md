@@ -76,7 +76,7 @@ GLSL 셰이더를 사용해 Phong lighting을 구현했고, diffuse/specular tex
 ## Project Structure
 
 ```txt
-CGP_VS2022/
+opengl-fps-demo/
   CGP_VS2022.sln
   include/
   lib/
