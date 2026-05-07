@@ -5,13 +5,13 @@ OpenGL SuperBible 7th Edition의 `sb7` application framework를 기반으로 FPS
 
 ## Demo Video
 
-[![Demo Video](https://img.youtube.com/vi/3UdZFD5EFbg/hqdefault.jpg)](https://youtu.be/3UdZFD5EFbg)
+[![Demo Video](docs/images/fps-demo-screenshot.png)](https://youtu.be/3UdZFD5EFbg)
 
 https://youtu.be/3UdZFD5EFbg
 
 ## Features
 
-- FPS 카메라 이동 및 마우스 시점 조작
+- FPS 시점 카메라 이동 및 조작
 - 라이플 / 권총 총기 전환
 - 반자동 / 자동 사격 모드
 - 탄약 및 장전 시스템
@@ -32,8 +32,6 @@ https://youtu.be/3UdZFD5EFbg
 - GLFW
 - stb_image
 - miniaudio
-- Visual Studio 2022
-- VS Code + MSBuild
 
 ## Controls
 
@@ -60,6 +58,11 @@ https://youtu.be/3UdZFD5EFbg
 
 사격 시 카메라 위치와 방향을 기준으로 ray를 생성하고, 타겟 평면과의 교차 여부를 계산했습니다.
 교차 지점이 타겟 영역 내부에 있으면 피격으로 처리하고, 해당 위치에 bullet mark를 렌더링합니다.
+
+### First-Person Weapon Rendering
+
+총기가 월드에 고정된 오브젝트처럼 보이지 않고 사용자가 들고 있는 것처럼 보이도록 카메라 행렬을 활용했습니다.
+카메라의 방향 벡터와 위치를 기반으로 역행렬을 구성하고, 이를 총기 모델 변환에 적용해 화면 앞쪽에 고정된 1인칭 무기처럼 렌더링했습니다.
 
 ### Weapon System
 
@@ -93,22 +96,7 @@ CGP_VS2022/
 
 ## Build
 
-### Visual Studio 2022
-
-1. `CGP_VS2022.sln` 열기
-2. `Debug | x64` 선택
-3. 빌드 후 실행
-
-### VS Code
-
-이 저장소에는 VS Code용 `.vscode` 설정이 포함되어 있습니다.
-
-1. VS Code에서 `CGP_VS2022` 폴더 열기
-2. `Run and Debug`에서 `Run _myApp_ Debug x64` 선택
-3. F5 실행
-
-> 실행 시 working directory는 `_myApp_`로 설정되어야 합니다.
-> 에셋 로딩 경로가 `_myApp_/assets` 기준으로 작성되어 있기 때문입니다.
+Visual Studio 2022와 VS Code 환경에서 모두 빌드 및 실행할 수 있도록 구성하였습니다.
 
 ## What I Learned
 
@@ -118,4 +106,3 @@ CGP_VS2022/
 - FPS 카메라와 마우스 입력 처리
 - Ray 기반 간단한 피격 판정
 - 총기 상태 관리와 반동 처리
-- Visual Studio 프로젝트를 VS Code/MSBuild 환경에서도 빌드 가능하게 구성하는 방법
